@@ -8,8 +8,7 @@ public class Car
     private int location;
     private int destination;
 
-    public Car(String driverName, int numberOfSeats, int destination)
-    {
+    public Car(String driverName, int numberOfSeats, int destination) {
         passengers = new ArrayList<Person>();
         this.driverName = driverName;
         this.numberOfSeats = numberOfSeats;
@@ -21,8 +20,7 @@ public class Car
        Gets the name of this car's driver.
        @return the driver name
     */
-    public String getDriverName()
-    {
+    public String getDriverName() {
         return driverName;
     }
 
@@ -30,8 +28,7 @@ public class Car
        Checks whether this car has arrived at its destination.
        @return true if the car has arrived
     */
-    public boolean hasArrived()
-    {
+    public boolean hasArrived() {
         return location == destination;
     }
 
@@ -41,16 +38,13 @@ public class Car
        @return true if there is room in the car and the passenger's
        destination on the way to this car's destination
     */
-    public boolean tryToAdd(Person p)
-    {
+    public boolean tryToAdd(Person p) {
         if (passengers.size() + 2 <= numberOfSeats
-                && p.getDestination() <= destination)
-        {
+                && p.getDestination() <= destination) {
             passengers.add(p);
             return true;
         }
-        else
-        {
+        else {
             return false;
         }
     }
@@ -63,23 +57,19 @@ public class Car
     {
         location++;
         int i = 0;
-        while (i < passengers.size())
-        {
+        while (i < passengers.size()) {
             Person p = passengers.get(i);
-            if (p.getDestination() == location)
-            {
+            if (p.getDestination() == location) {
                 passengers.remove(i);
             }
-            else
-            {
+            else {
                 i++;
             }
         }
         System.out.println(toString());
     }
 
-    public String toString()
-    {
+    public String toString() {
         return "Car[location=" + location + ",driverName=" + driverName + ",passengers=" + passengers + "]";
     }
 }

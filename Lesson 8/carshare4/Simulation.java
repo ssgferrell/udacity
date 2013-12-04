@@ -9,8 +9,7 @@ public class Simulation
     private ArrayList<Car> cars;
     private ArrayList<Person> people;
 
-    public Simulation()
-    {
+    public Simulation() {
         cars = new ArrayList<Car>();
         people = new ArrayList<Person>();
     }
@@ -22,20 +21,16 @@ public class Simulation
        0 for a passenger, -1 to signify the end of input.
        @param in the scanner to read from
     */
-    public void read(Scanner in)
-    {
+    public void read(Scanner in) {
         boolean done = false;
         System.out.println("Enter input of the form n Name Destination");
         System.out.println("n > 0: Car with n seats, n = 0: Passenger, n = -1: End of input");
-        while (!done)
-        {
+        while (!done) {
             int capacity = in.nextInt();
-            if (capacity == -1)
-            {
+            if (capacity == -1) {
                 done = true;
             }
-            else
-            {
+            else {
                 String name = in.next();
                 int destination = in.nextInt();
                 if (capacity == 0)
@@ -53,13 +48,10 @@ public class Simulation
     /**
        Load all passengers into cars.
     */
-    public void loadPassengers()
-    {
-        for (Person p : people)
-        {
+    public void loadPassengers() {
+        for (Person p : people) {
             boolean added = false;
-            for (int i = 0; !added && i < cars.size(); i++)
-            {
+            for (int i = 0; !added && i < cars.size(); i++) {
                 added = cars.get(i).tryToAdd(p);
             }
         }
@@ -68,13 +60,16 @@ public class Simulation
     /**
        Drive all cars until they have arrived.
     */
-    public void driveCars()
-    {
+    public void driveCars() {
         // Complete this method
+        for (Car thisCar : cars) {
+            while (!thisCar.hasArrived()) {
+                thisCar.drive();
+            }
+        }
     }
 
-    public String toString()
-    {
+    public String toString() {
         return cars.toString();
     }
 }
