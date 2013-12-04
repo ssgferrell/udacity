@@ -52,10 +52,22 @@ public class Simulation
     /**
        Load all passengers into cars.
     */
-    public void loadPassengers()
-    {
-        // Complete this method
+    public void loadPassengers() {
+        int numberOfCars = cars.size();
+        
+        if (numberOfCars > 0) {
+            for (int passengerAtIndex = 0; passengerAtIndex < people.size(); passengerAtIndex ++) {
+                for (int carAtIndex = 0; carAtIndex < numberOfCars; carAtIndex ++) {
+                    Car thisCar = cars.get(carAtIndex);
+                    Person passenger = people.get(passengerAtIndex);
+                    if (thisCar.tryToAdd(passenger)) {
+                        break; 
+                    }
+                }
+            }
+        }
     }
+
 
     /**
        Drive all cars until they have arrived.

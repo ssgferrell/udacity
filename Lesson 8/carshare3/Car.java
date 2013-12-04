@@ -54,31 +54,28 @@ public class Car
             return false;
         }
     }
-
+    
     /**
        Drives this car to the next location and drops off
        any passengers whose destination is that location
     */
-    public void drive()
-    {
+    public void drive() {
+        // TODO: Implement this method
         location++;
-        int i = 0;
-        while (i < passengers.size())
-        {
-            Person p = passengers.get(i);
-            if (p.getDestination() == location)
-            {
-                passengers.remove(i);
-            }
-            else
-            {
-                i++;
+        if (passengers.size() > 0) {
+            for (int i = 0; i < passengers.size();) {
+                Person p = passengers.get(i);
+                if (p.getDestination() == location) {
+                    passengers.remove(p);
+                }
+                else {
+                    i++;
+                }
             }
         }
     }
 
-    public String toString()
-    {
+    public String toString() {
         return "Car[location=" + location + ",driverName=" + driverName + ",passengers=" + passengers + "]";
     }
 }
