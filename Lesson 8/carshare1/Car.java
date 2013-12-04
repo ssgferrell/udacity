@@ -46,7 +46,21 @@ public class Car
     */
     public boolean tryToAdd(Person p)
     {
+        //private ArrayList<Person> passengers;
+        //private int numberOfSeats;
+        //private String driverName;
+        //private int location;
+        //private int destination;
         // TODO: Complete this method
+        if (numberOfSeats - 2 >= passengers.size() && 
+            p.getDestination() <= destination &&
+            location <= p.getDestination()) {
+            passengers.add(p);
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     /**
