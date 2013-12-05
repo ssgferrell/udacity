@@ -11,6 +11,6 @@ comment3.params=p
 comment3.target=boolean\ tryToAdd(Person)
 comment3.text=\n\ \ \ \ \ \ \ Tries\ to\ add\ a\ passenger.\n\ \ \ \ \ \ \ @param\ p\ the\ new\ passenger\n\ \ \ \ \ \ \ @return\ true\ if\ there\ is\ room\ in\ the\ car\ and\ the\ passenger's\n\ \ \ \ \ \ \ destination\ on\ the\ way\ to\ this\ car's\ destination\n
 comment4.params=
-comment4.target=void\ drive()
+comment4.target=java.util.ArrayList\ drive()
 comment4.text=\n\ \ \ \ \ \ \ Drives\ this\ car\ to\ the\ next\ location\ and\ drops\ off\n\ \ \ \ \ \ \ any\ passengers\ whose\ destination\ is\ that\ location.\n
 numComments=5
