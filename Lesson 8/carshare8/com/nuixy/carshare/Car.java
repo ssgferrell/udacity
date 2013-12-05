@@ -1,4 +1,7 @@
+package com.nuixy.carshare;
+
 import java.util.ArrayList;
+import com.nuixy.Person;
 
 public class Car
 {

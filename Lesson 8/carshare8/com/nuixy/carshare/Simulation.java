@@ -1,5 +1,8 @@
+package com.nuixy.carshare;
+
 import java.util.ArrayList;
 import java.util.Scanner;
+import com.nuixy.Person;
 
 public class Simulation
 {
