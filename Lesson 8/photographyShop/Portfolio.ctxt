@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=photoName\ photog
+comment0.target=Portfolio(java.lang.String,\ Photographer)
+comment1.params=
+comment1.target=java.lang.String\ getPhotoName()
+comment2.params=
+comment2.target=Photographer\ getPhotog()
+numComments=3

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=priority\ description
+comment0.target=Assignment(int,\ java.lang.String)
+comment1.params=
+comment1.target=int\ getPriority()
+comment1.text=\n\ Gets\ the\ priority\ assigned\ to\ this\ Assignment.\ The\ higher\ the\ number\ the\ higher\ the\ priority.\n\ @return\ Priority\ level.\n
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment2.text=\n\ Gets\ the\ name\ of\ this\ assignment.\ \n\ @return\ The\ Assignment's\ name.\n
+numComments=3

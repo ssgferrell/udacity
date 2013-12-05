@@ -15,15 +15,18 @@ import java.util.regex.Matcher;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-public class Photographer
-{
+public class Photographer {
     private Map<String, String> photos;
-
-    public Photographer()
-    {
+    private String name;
+    
+    public Photographer(String name) {
         photos = new HashMap(); // An important line. Must go in the constructor.
         readPhotos(); // A very important line. this must go in the Photographer
         // constructor so that the photographer will be able to take Pictures.
+        this.name = name;
+    }
+    public String getName() {
+        return name;
     }
 
     /**
@@ -32,8 +35,7 @@ public class Photographer
      * @param description the description of the desired photo.
      * @return the name of a file with a photo matching the description.
      */
-    private String takePicture(String description)
-    {
+    public String takePicture(String description) {
         return photos.get(description);
     }
 
@@ -45,34 +47,28 @@ public class Photographer
      * putting it in the system. That would take a lot of time though, so instead
      * the photos are already included.
      */
-    private void readPhotos()
-    {
+    private void readPhotos() {
         Pattern commentPattern = Pattern.compile("^//.*");
         Pattern photoPattern = Pattern.compile("([a-zA-Z0-9\\.]+) (.*)");
-        try
-        {
+        try {
             Scanner in = new Scanner(new File("photos.txt"));
 
-            while (in.hasNextLine())
-            {
+            while (in.hasNextLine()) {
                 String line = in.nextLine();
 
                 Matcher commentMatcher = commentPattern.matcher(line);
                 Matcher photoMatcher = photoPattern.matcher(line);
-                if (commentMatcher.find())
-                {
+                if (commentMatcher.find()) {
                     // This line of the file is a comment. Ignore it.
                 }
-                else if (photoMatcher.find())
-                {
+                else if (photoMatcher.find()) {
                     String fileName = photoMatcher.group(1);
                     String description = photoMatcher.group(2);
                     photos.put(description, fileName);
                 }
             }
         }
-        catch (FileNotFoundException e)
-        {
+        catch (FileNotFoundException e) {
             System.out.println(e);
         }
     }

@@ -14,8 +14,7 @@ import javax.swing.filechooser.FileFilter;
 /**
  * A picture from an image file.
  */
-public class Picture implements Shape
-{
+public class Picture implements Shape {
     private BufferedImage image;
     private JLabel label = new JLabel();
     private String source;
@@ -27,8 +26,8 @@ public class Picture implements Shape
     /**
      * Constructs a picture with no image.
      */
-    public Picture()
-    {
+    public Picture() {
+        
     }
 
     /**
@@ -36,8 +35,7 @@ public class Picture implements Shape
      * @param width the desired width
      * @param height the desired height
      */
-    public Picture(double width, double height)
-    {
+    public Picture(double width, double height) {
         image = new BufferedImage((int) Math.round(width),
                                   (int) Math.round(height), BufferedImage.TYPE_INT_RGB);
         label.setIcon(new ImageIcon(image));
@@ -48,8 +46,7 @@ public class Picture implements Shape
      * Constructs an image from a given file or URL.
      * @param source the filename or URL
      */
-    public Picture(String source)
-    {
+    public Picture(String source) {
         load(source);
     }
 
@@ -58,10 +55,8 @@ public class Picture implements Shape
      *
      * @param source the filename or URL
      */
-    public void load(String source)
-    {
-        try
-        {
+    public void load(String source) {
+        try {
             this.source = source;
             if (source.startsWith("http://"))
                 image = ImageIO.read(new URL(source).openStream());
@@ -71,8 +66,7 @@ public class Picture implements Shape
             label.setIcon(new ImageIcon(image));
             label.setText("");
         }
-        catch (Exception ex)
-        {
+        catch (Exception ex) {
             image = null;
             label.setIcon(null);
             ex.printStackTrace();
@@ -84,8 +78,7 @@ public class Picture implements Shape
      * Gets the leftmost x-position of the shape.
      * @return the leftmost x-position
      */
-    public int getX()
-    {
+    public int getX() {
         return (int) Math.round(x - xGrow);
     }
 
@@ -93,8 +86,7 @@ public class Picture implements Shape
      * Gets the topmost y-position of the shape.
      * @return the topmost y-position
      */
-    public int getY()
-    {
+    public int getY() {
         return (int) Math.round(y - yGrow);
     }
 
@@ -102,8 +94,7 @@ public class Picture implements Shape
      * Gets the rightmost x-position of the shape.
      * @return the rightmost x-position
      */
-    public int getMaxX()
-    {
+    public int getMaxX() {
         return getX() + getWidth();
     }
 
@@ -111,16 +102,14 @@ public class Picture implements Shape
      * Gets the bottommost y-position of the shape.
      * @return the bottommost y-position
      */
-    public int getMaxY()
-    {
+    public int getMaxY() {
         return getY() + getHeight();
     }
 
     /**
      * Gets the width of this picture.
      */
-    public int getWidth()
-    {
+    public int getWidth() {
         return (int) Math.round(
                    (image == null ? 0 : image.getWidth()) + 2 * xGrow);
     }
@@ -128,8 +117,7 @@ public class Picture implements Shape
     /**
      * Gets the height of this picture.
      */
-    public int getHeight()
-    {
+    public int getHeight() {
         return (int) Math.round(
                    (image == null ? 0 : image.getHeight()) + 2 * yGrow);
     }
@@ -138,20 +126,16 @@ public class Picture implements Shape
      * The number of pixels in this picture.
      * @return the number of pixels
      */
-    public int pixels()
-    {
-        if (image == null)
-        {
+    public int pixels() {
+        if (image == null) {
             return 0;
         }
-        else
-        {
+        else {
             return image.getWidth() * image.getHeight();
         }
     }
 
-    public int[][] getGrayLevels()
-    {
+    public int[][] getGrayLevels() {
         if (image == null) return new int[0][0];
         int[][] grayLevels = new int[getHeight()][getWidth()];
 
@@ -165,12 +149,10 @@ public class Picture implements Shape
         return grayLevels;
     }
 
-    public Picture(int[][] grayLevels)
-    {
+    public Picture(int[][] grayLevels) {
         image = new BufferedImage(grayLevels[0].length, grayLevels.length, BufferedImage.TYPE_INT_RGB);
         for (int i = 0; i < image.getWidth(); i++)
-            for (int j = 0; j < image.getHeight(); j++)
-            {
+            for (int j = 0; j < image.getHeight(); j++) {
                 int gray = grayLevels[j][i];
                 if (gray < 0) gray = 0;
                 if (gray > 255) gray = 255;
@@ -181,8 +163,7 @@ public class Picture implements Shape
         label.setText("");
     }
 
-    public String toString()
-    {
+    public String toString() {
         return "Picture[x=" + getX() + ",y=" + getY() + ",width=" + getWidth() + ",height=" + getHeight() + ",source=" + source + "]";
     }
 
@@ -191,8 +172,7 @@ public class Picture implements Shape
      * @param i the pixel index
      * @return the color at pixel i
      */
-    public Color getColorAt(int i)
-    {
+    public Color getColorAt(int i) {
         if (image == null || i < 0 || i >= pixels())
         {
             throw new IndexOutOfBoundsException("" + i);
@@ -208,8 +188,7 @@ public class Picture implements Shape
      * @param i the pixel index
      * @param color the new color for the pixel
      */
-    public void setColorAt(int i, Color color)
-    {
+    public void setColorAt(int i, Color color) {
         if (image == null || i < 0 || i >= pixels())
         {
             throw new IndexOutOfBoundsException("" + i);
@@ -226,8 +205,7 @@ public class Picture implements Shape
      * @param y the y-coordinate (row) of the pixel
      * @param color the new color for the pixel
      */
-    public Color getColorAt(int x, int y)
-    {
+    public Color getColorAt(int x, int y) {
         if (image == null || x < 0 || x >= image.getWidth() || y < 0 || y >= image.getHeight())
         {
             throw new IndexOutOfBoundsException("(" + x + "," + y + ")");
@@ -245,8 +223,7 @@ public class Picture implements Shape
      * @param y the y-coordinate (row) of the pixel
      * @param the color of the pixel at the given row and column
      */
-    public void setColorAt(int x, int y, Color color)
-    {
+    public void setColorAt(int x, int y, Color color) {
         if (image == null || x < 0 || x >= image.getWidth() || y < 0 || y >= image.getHeight())
         {
             throw new IndexOutOfBoundsException("(" + x + "," + y + ")");
@@ -263,8 +240,7 @@ public class Picture implements Shape
      * @param dx the amount by which to move in x-direction
      * @param dy the amount by which to move in y-direction
      */
-    public void translate(double dx, double dy)
-    {
+    public void translate(double dx, double dy) {
         x += dx;
         y += dy;
         Canvas.getInstance().repaint();
@@ -275,8 +251,7 @@ public class Picture implements Shape
      * @param dw the amount by which to resize the width on each side
      * @param dw the amount by which to resize the height on each side
      */
-    public void grow(double dw, double dh)
-    {
+    public void grow(double dw, double dh) {
         xGrow += dw;
         yGrow += dh;
         Canvas.getInstance().repaint();
@@ -285,8 +260,7 @@ public class Picture implements Shape
     /**
      * Shows this picture on the canvas.
      */
-    public void draw()
-    {
+    public void draw() {
         Canvas.getInstance().show(this);
     }
 
@@ -294,13 +268,10 @@ public class Picture implements Shape
      * Draws this shape.
      * @param g2 the graphics context
      */
-    public void paintShape(Graphics2D g2)
-    {
-        if (image != null)
-        {
+    public void paintShape(Graphics2D g2) {
+        if (image != null) {
             Dimension dim = label.getPreferredSize();
-            if (dim.width > 0 && dim.height > 0)
-            {
+            if (dim.width > 0 && dim.height > 0) {
                 label.setBounds(0, 0, dim.width, dim.height);
                 g2.translate(getX(), getY());
                 g2.scale((image.getWidth() + 2 * xGrow) / dim.width,

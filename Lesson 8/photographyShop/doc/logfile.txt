@@ -1,0 +1,32 @@
+Class documentation
+<---- javadoc command: ---->
+/Applications/BlueJ.app/Contents/PlugIns/jdk/Contents/Home/bin/javadoc
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.7
+-classpath
+/Applications/BlueJ.app/Contents/Resources/Java/bluejcore.jar:/Applications/BlueJ.app/Contents/Resources/Java/junit-4.8.2.jar:/Users/dmgctrl/Documents/workspace/udacity/Lesson 8/photographyShop
+-d
+/Users/dmgctrl/Documents/workspace/udacity/Lesson 8/photographyShop/doc
+-encoding
+US-ASCII
+-charset
+US-ASCII
+-docletpath
+/Applications/BlueJ.app/Contents/Resources/Java/bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+/Users/dmgctrl/Documents/workspace/udacity/Lesson 8/photographyShop/Manager.java
+<---- end of javadoc command ---->
+Loading source file /Users/dmgctrl/Documents/workspace/udacity/Lesson 8/photographyShop/Manager.java...
+/Users/dmgctrl/Documents/workspace/udacity/Lesson 8/photographyShop/Manager.java:88: error: reached end of file while parsing
+}
+ ^
+1 error
