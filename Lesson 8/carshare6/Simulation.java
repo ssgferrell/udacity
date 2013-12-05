@@ -60,6 +60,11 @@ public class Simulation
             for (int i = 0; !added && i < cars.size(); i++)
             {
                 added = cars.get(i).tryToAdd(p);
+                Car thisCar = cars.get(i);
+                String driverName = thisCar.getDriverName();
+                if (added) {
+                    System.out.println(driverName + " picks up " + p.getName());
+                }
                 // TODO: Add print statement here
             }
         }

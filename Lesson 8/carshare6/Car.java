@@ -53,7 +53,7 @@ public class Car
         {
             passengers.add(p);
             // TODO: Remove print method
-            System.out.println(driverName + " picks up " + p.getName());
+            //System.out.println(driverName + " picks up " + p.getName());
             return true;
         }
         else
