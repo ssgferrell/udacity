@@ -2,3 +2,4 @@ $ cat .gitignore
 
 *.bluej
 *~
+.DS_Store
