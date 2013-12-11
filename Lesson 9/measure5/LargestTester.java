@@ -1,10 +1,6 @@
-// BlueJ project: lesson9/measure5
-public class LargestTester
-{
-    public static void main(String[] args)
-    {
-        Country[] centralAmericanCountries =
-        {
+public class LargestTester {
+    public static void main(String[] args) {
+        Country[] centralAmericanCountries = {
             new Country("Belize", 22966),
             new Country("Costa Rica", 51100),
             new Country("El Salvador", 21041),
@@ -16,7 +12,7 @@ public class LargestTester
 
         // TODO: We want this as a Country, not as Measurable, so we can
         // call getName. But it doesn't work. Fix the code so that it does.
-        Country largestCountry = Data.largest(centralAmericanCountries);
+        Country largestCountry = (Country) Data.largest(centralAmericanCountries);
         System.out.println("Largest country: " + largestCountry.getName());
         System.out.println("Expected: Nicaragua");
     }
