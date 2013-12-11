@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=x\ y\ message
 comment0.target=Text(double,\ double,\ java.lang.String)
-comment0.text=\n\ Constructs\ a\ text\ at\ a\ given\ location.\n\ @param\ x\ the\ leftmost\ x-position\ of\ the\ shape\n\ @param\ y\ the\ topmost\ y-position\ of\ the\ shape\n\ @param\ message\ the\ text\ string\ \n
+comment0.text=\n\ Constructs\ a\ text\ at\ a\ given\ location.\n\ @param\ x\ the\ leftmost\ x-position\ of\ the\ shape\n\ @param\ y\ the\ topmost\ y-position\ of\ the\ shape\n\ @param\ message\ the\ text\ string\n
 comment1.params=
 comment1.target=int\ getX()
 comment1.text=\n\ Gets\ the\ leftmost\ x-position\ of\ the\ bounding\ box.\n\ @return\ the\ leftmost\ x-position\n
