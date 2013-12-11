@@ -1,10 +1,8 @@
 // BlueJ project: lesson9/scene4
 import java.util.ArrayList;
 
-public class Scene
-{
-    public static void main(String[] args)
-    {
+public class Scene {
+    public static void main(String[] args) {
         ArrayList<Drawable> elements = new ArrayList<Drawable>();
         Car car1 = new Car(100, 300);
         elements.add(car1);
@@ -19,16 +17,15 @@ public class Scene
         elements.add(new Dog(100, 400, "Rex.jpg"));
         elements.add(new Dog(200, 400, "Lucky.jpg"));
 
-        for (Drawable d : elements)
-        {
+        for (Drawable d : elements) {
             d.draw();
         }
 
         // TODO: Also move Fido
 
-        for (int i = 1; i <= 10; i++)
-        {
+        for (int i = 1; i <= 10; i++) {
             car1.move(1);
+            dog1.move(1);
             Canvas.snapshot();
         }
     }
