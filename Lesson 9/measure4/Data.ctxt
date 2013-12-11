@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=objects
+comment0.target=double\ average(Measurable[])
+comment0.text=\n\ \ \ \ \ \ \ Computes\ the\ average\ measure\ of\ the\ given\ objects.\n\ \ \ \ \ \ \ @param\ objects\ an\ array\ of\ Measurable\ objects\n\ \ \ \ \ \ \ @return\ the\ average\ of\ the\ measures\n
+comment1.params=objects
+comment1.target=Measurable\ largest(Measurable[])
+comment1.text=\n\ \ \ \ \ \ \ Computes\ the\ largest\ of\ the\ given\ objects.\n\ \ \ \ \ \ \ @param\ objects\ an\ array\ of\ Measurable\ objects\n\ \ \ \ \ \ \ @return\ the\ object\ with\ the\ largest\ measure\n
+numComments=2
