@@ -1,26 +1,23 @@
 // BlueJ project: lesson9/measure2
-public class Data
-{
+public class Data {
     /**
        Computes the average area of the given countries.
        @param objects an array of Country objects
        @return the average of the areas
     */
-    public static double average(Country[] objects)
-    {
+    public static double average(Country[] objects) {
         double sum = 0;
-        for (Country obj : objects)
-        {
-            sum = sum + obj.getArea();
+        double average = 0;
+        int arraySize = objects.length;
+        
+        for (Country obj : objects) {
+            sum += obj.getArea();
         }
-        if (objects.length > 0)
-        {
-            return sum / objects.length;
+        if (arraySize > 0) {
+            return sum / arraySize;
         }
-        else
-        {
-            return 0;
-        }
+        
+        return average;
     }
 
     /**
@@ -28,8 +25,18 @@ public class Data
        @param objects an array of Car objects
        @return the average of the fuel efficiencies
     */
-    public static double average(Car[] objects)
-    {
-        // TODO: Compute the average fuel efficiency
+    public static double average(Car[] objects) {
+        double sum = 0; 
+        double average = 0;
+        int arraySize = objects.length;
+        
+        for (Car thisCar : objects) {
+            sum += thisCar.getFuelEfficiency();
+        }
+        
+        if (arraySize > 0) {
+            average = sum / arraySize;
+        }
+        return average;
     }
 }
